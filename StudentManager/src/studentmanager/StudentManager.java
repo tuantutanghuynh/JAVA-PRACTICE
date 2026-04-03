@@ -1,19 +1,26 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package studentmanager;
 
 import java.util.Scanner;
 
 /**
+ * Entry point for the Student Management System.
+ * Provides a menu-driven CLI to manage undergraduate and graduate student records,
+ * demonstrating OOP design with inheritance, polymorphism, and collection management.
+ *
+ * <p>FR: Point d'entrée du Système de Gestion des Étudiants.
+ * Offre une interface CLI par menus pour gérer les dossiers étudiants,
+ * illustrant la POO : héritage, polymorphisme et gestion de collections.</p>
  *
  * @author tangh
+ * @version 1.0
  */
 public class StudentManager {
 
     /**
-     * @param args the command line arguments
+     * Launches the interactive student management menu loop.
+     * FR: Lance la boucle de menu interactif de gestion des étudiants.
+     *
+     * @param args Command-line arguments (not used). / Arguments de ligne de commande (non utilisés).
      */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

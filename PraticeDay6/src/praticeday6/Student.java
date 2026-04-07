@@ -3,9 +3,10 @@ package praticeday6;
 import java.util.Scanner;
 
 public class Student {
+
     private String name;
     private int age;
-    private double mark;
+    private float mark;
 
     public void input() {
         Scanner sc = new Scanner(System.in);
@@ -13,49 +14,46 @@ public class Student {
         while (true) {
             try {
                 System.out.print("Nhap ten (> 3 ky tu): ");
-                String input = sc.nextLine(); // co the nem Exception neu loi doc input
-                if (input.length() <= 3) { // NullPointerException neu input = null
+                name = sc.nextLine(); // co the nem Exception neu loi doc input
+                if (name.length() < 3) { // NullPointerException neu input = null
                     System.out.println("Loi: Ten phai co nhieu hon 3 ky tu!");
-                    continue;
+
+                } else {
+                    break;
                 }
-                name = input;
-                break;
+
             } catch (Exception e) {
-                System.out.println("Loi: " + e.getMessage());
+                System.out.println("Error: " + e.getMessage());
             }
         }
 
         while (true) {
             try {
                 System.out.print("Nhap tuoi (> 18): ");
-                int inputAge = sc.nextInt(); // InputMismatchException neu nhap chuoi hoac so thuc
-                if (inputAge <= 18) {
-                    System.out.println("Loi: Tuoi phai lon hon 18!");
-                    continue;
+                age = sc.nextInt(); // InputMismatchException neu nhap chuoi hoac so thuc
+                if (age <= 18) {
+                    throw new Exception("age >18");
                 }
-                sc.nextLine(); // xoa "\n" con lai trong buffer sau nextInt()
-                age = inputAge;
                 break;
+                
             } catch (Exception e) {
                 sc.nextLine(); // xoa "abc\n" bi ket trong buffer khi nhap sai
-                System.out.println("Loi: Phai nhap so nguyen hop le!");
+                System.out.println("Error: " + e.getMessage());
             }
         }
 
         while (true) {
             try {
                 System.out.print("Nhap diem (0 - 100): ");
-                float inputMark = sc.nextFloat(); // InputMismatchException neu nhap chuoi
-                if (inputMark < 0 || inputMark > 100) {
-                    System.out.println("Loi: Diem phai tu 0 den 100!");
-                    continue;
+               mark = sc.nextFloat(); // InputMismatchException neu nhap chuoi
+                if (mark < 0 || mark > 100) {
+                    throw new Exception("0 < mark <100");
                 }
-                sc.nextLine(); // xoa "\n" con lai trong buffer sau nextFloat()
-                mark = inputMark;
+               
                 break;
             } catch (Exception e) {
                 sc.nextLine(); // xoa "abc\n" bi ket trong buffer khi nhap sai
-                System.out.println("Loi: Phai nhap so hop le!");
+                System.out.println("Error:" + e.getMessage());
             }
         }
     }

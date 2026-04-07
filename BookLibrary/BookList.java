@@ -32,7 +32,20 @@ public class BookList {
         for (int i= 0; i < count ; i++){
             books[i].PrintInfo();
         }
+    }
 
+    //find book by id
+    public void FindById(String id){
+        boolean found = false;
+        for (int i = 0; i < count; i++){
+            if(books[i].bookId.equals(id)){
+                books[i].PrintInfo();
+                found = true;
+            }
+        }
+        if (!found){
+            System.out.println("Cannot find book with ID: " + id);
+        }
     }
 
 }

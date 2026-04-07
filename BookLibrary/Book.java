@@ -17,6 +17,7 @@ public abstract class Book implements IBookable{
         System.out.print("Input price: ");
         price = sc.nextFloat();
         sc.nextLine();
+        sc.close();
     }
 
     @Override
@@ -45,4 +46,9 @@ public abstract class Book implements IBookable{
     }
 
     public abstract float CalcFine();
+
+    @Override
+    public String GetTitle(){
+        return title;
+    }
 }

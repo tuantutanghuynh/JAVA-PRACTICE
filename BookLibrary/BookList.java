@@ -41,6 +41,7 @@ public class BookList {
             if(books[i].bookId.equals(id)){
                 books[i].PrintInfo();
                 found = true;
+                break;
             }
         }
         if (!found){

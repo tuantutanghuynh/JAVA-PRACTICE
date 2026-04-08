@@ -1,21 +1,17 @@
 package BookLibrary;
 
-import java.util.Scanner;
-
 public class TextBook extends Book {
     String subject;
     int edition;
 
     @Override
     public void Input(){
-        Scanner sc = new Scanner(System.in);
         super.Input();
         System.out.print("Input Subject: ");
-        subject = sc.nextLine();
+        subject = INPUT.nextLine();
         System.out.print("Input Edition: ");
-        edition = sc.nextInt();
-        sc.nextLine();
-        sc.close();
+        edition = INPUT.nextInt();
+        INPUT.nextLine();
     }
 
     @Override

@@ -1,21 +1,17 @@
 package BookLibrary;
 
-import java.util.Scanner;
-
 public class Novel extends Book {
     String genre;
     int pages;
 
     @Override
     public void Input(){
-        Scanner sc = new Scanner(System.in);
         super.Input();
         System.out.print("Input Genre: ");
-        genre = sc.nextLine();
+        genre = INPUT.nextLine();
         System.out.print("Input Number of Pages: ");
-        pages = sc.nextInt();
-        sc.nextLine();
-        sc.close();
+        pages = INPUT.nextInt();
+        INPUT.nextLine();
     }
 
     @Override

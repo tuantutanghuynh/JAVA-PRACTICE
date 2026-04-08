@@ -1,6 +1,7 @@
 package BookLibrary;
 import java.util.Scanner;
 public abstract class Book implements IBookable{
+    protected static final Scanner INPUT = new Scanner(System.in);
     String bookId;
     String title;
     String author;
@@ -9,15 +10,13 @@ public abstract class Book implements IBookable{
 
     @Override
     public void Input(){
-        Scanner sc = new Scanner(System.in);
         System.out.print("Input Book ID: ");
-        bookId = sc.nextLine();
+        bookId = INPUT.nextLine();
         System.out.print("Input title: ");
-        title = sc.nextLine();
+        title = INPUT.nextLine();
         System.out.print("Input price: ");
-        price = sc.nextFloat();
-        sc.nextLine();
-        sc.close();
+        price = INPUT.nextFloat();
+        INPUT.nextLine();
     }
 
     @Override

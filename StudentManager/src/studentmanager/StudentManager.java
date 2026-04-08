@@ -36,7 +36,7 @@ public class StudentManager {
             System.out.println("4. Sort by GPA");
             System.out.println("5. Find GPA > X");
             System.out.println("6. Exit");
-            System.out.print("Chon: ");
+            System.out.print("Choose: ");
 
             option = sc.nextLine();
 
@@ -55,11 +55,11 @@ public class StudentManager {
 
                 case "4":
                     list.SortByGPA();
-                    System.out.println("Da sap xep!");
+                    System.out.println("Sorted successfully!");
                     break;
 
                 case "5":
-                    System.out.print("Nhap GPA: ");
+                    System.out.print("Input GPA: ");
                     double gpa = sc.nextDouble();
                     sc.nextLine();
                     list.FindAboveGPA(gpa);
@@ -70,7 +70,7 @@ public class StudentManager {
                     return;
 
                 default:
-                    System.out.println("Sai lua chon!");
+                    System.out.println("Invalid option!");
             }
         }
     }

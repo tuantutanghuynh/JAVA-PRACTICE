@@ -55,12 +55,14 @@ public class TestLibrary {
                     break;
                 case "8":
                     list.findMostExpensiveNovel();
+                    break;
                 case "9":
                     list.CounBorrowed();
                     break;
                 case "0":
                     System.out.println("Bye!");
-                    break;
+                    sc.close();
+                    return;
                 default:
                     System.out.println("WRONG OPTION, input again");
 

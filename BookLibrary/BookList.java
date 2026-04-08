@@ -49,4 +49,36 @@ public class BookList {
         }
     }
 
+    //total value of all books
+    public double TotalValue(){
+        double total = 0;
+        for (int i=0 ; i<count ; i++){
+            total += books[i].price;
+        }
+        return total;
+    }
+
+    //Borrow book by id
+    public void Borrow(String id){
+        for(int i =0 ; i<count; i++){
+            if(books[i].bookId.equals(id)){
+                books[i].Borrow();
+                return;
+        }
+    }
+    System.out.println("Cannot find book");
+}
+
+    //return book by id
+    public void Return(String id){
+        for(int i = 0; i< count; i++){
+            if(books[i].bookId.equals(id)){
+                books[i].Return();
+                return;
+            }
+        }
+        System.out.println("Cannot find a returned book");
+    }
+
+    //Find Novel with the highest price
 }

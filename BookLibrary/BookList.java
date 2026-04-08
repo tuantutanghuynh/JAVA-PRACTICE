@@ -81,4 +81,32 @@ public class BookList {
     }
 
     //Find Novel with the highest price
+    public void findMostExpensiveNovel(){
+        Novel max = null;
+        for (int i = 0; i < count; i++){
+            if(books[i] instanceof Novel){
+                Novel nv = (Novel) books[i];
+                if(max == null || nv.price > max.price){
+                    max = nv;
+                }
+            }
+        }
+        if(max != null){
+            System.out.println("Novel with the highest price: ");
+            max.PrintInfo();
+        } else {
+            System.out.println("No novels found.");
+        }
+    }
+
+    //Count the number of borrowed books
+    public void CounBorrowed(){
+        int borrowedCount = 0 ;
+        for( int i = 0; i < count; i++){
+            if(books[i].isBorrowed){
+                borrowedCount ++;
+            }
+        }
+        System.out.println("Borrow list: " + borrowedCount);
+    }
 }

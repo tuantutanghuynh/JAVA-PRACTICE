@@ -5,5 +5,9 @@ public class Test {
         Student sv = new Student();
         sv.input();
         sv.output();
+        sv.Add();
+        sv.Add();
+        sv.Add();
+        sv.Show();
     }
 }

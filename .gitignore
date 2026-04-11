@@ -1,5 +1,8 @@
 # Ignore all markdown files
 *.md
+
+# Ignore PDF files
+*.pdf
 /PracticeDay5/nbproject/private/
 /PracticeDay5/build/
 /BankAccountSystem/nbproject/private/

@@ -23,6 +23,7 @@ public abstract class Room implements IBookable{
                 if(roomNumber.isEmpty()){
                     throw new Exception("Room number must not be empty!");
                 }break;
+            
             }catch (Exception e){
                 System.out.println("Error: " + e.getMessage());
             }
@@ -35,6 +36,8 @@ public abstract class Room implements IBookable{
                 if (pricePerNight <= 0 ) 
                     throw new Exception("Price must be > 0.");
                  break;
+            } catch (NumberFormatException e) {
+                System.out.println("  [Error] Please enter a valid number.");
             } catch (Exception e) {
                 System.out.println("Error: " + e.getMessage());                         
             }

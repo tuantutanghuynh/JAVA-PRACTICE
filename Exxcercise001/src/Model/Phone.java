@@ -34,14 +34,14 @@ public class Phone extends Product{
     }
 
     @Override
-    public String Output() {
-       float tax = price * TAX;
-       float total = price + tax;
-       return ("ID : " + id + ", Name: " + name + ", Price: " + price + ", tax: " + tax + ", total: " + total);
+    public String toString() {
+        float tax   = price * TAX;
+        float total = price + tax;
+        return "ID: " + id + ", Name: " + name + ", Price: " + price + ", Tax: " + tax + ", Total: " + total;
     }
-    
+
     @Override
-    public String toString(){
-        return Output();
+    public String Output() {
+        return toString();
     }
 }

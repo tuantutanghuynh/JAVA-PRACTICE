@@ -12,9 +12,9 @@ import java.util.Scanner;
  */
 public abstract class Product {
 
-    protected static final float TAX = 0.10f; // 10%
-    protected String name;
-    protected float  price;
+     static final float TAX = 0.10f; // 10%
+     String name;
+     float  price;
 
     public float getPrice() { 
         return price; 

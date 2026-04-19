@@ -9,5 +9,20 @@ package practice;
  * @author tangh
  */
 public class Student {
+    String id, name;
+    double score;
+
+    public Student(String id, String name, double score) {
+        this.id = id;
+        this.name = name;
+        this.score = score;
+    }
+
+    
+    @Override
+    public String toString() {
+        return "Student{" + "id=" + id + ", name=" + name + ", score=" + score + '}';
+    }
+    
     
 }

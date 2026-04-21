@@ -12,11 +12,11 @@ import java.util.Scanner;
  */
 public class StudentBiz extends Student {
 
-    double marketing, sales;
+    int marketing, sales;
 
     @Override
     public double getScore() {
-        return (marketing * 2 + sales) / 3;
+        return (marketing * 2 + sales) / 3.0;
     }
 
     @Override
@@ -27,11 +27,11 @@ public class StudentBiz extends Student {
         while (true) {
             System.out.print("  Marketing score: ");
             try {
-                marketing = Double.parseDouble(sc.nextLine().trim());
+                marketing = Integer.parseInt(sc.nextLine().trim());
                 if (marketing < 0 || marketing > 10) throw new Exception("Score must be 0-10");
                 break;
             } catch (NumberFormatException e) {
-                System.out.println("  Error: Please enter a valid number");
+                System.out.println("  Error: Please enter a valid integer");
             } catch (Exception e) {
                 System.out.println("  Error: " + e.getMessage());
             }
@@ -39,11 +39,11 @@ public class StudentBiz extends Student {
         while (true) {
             System.out.print("  Sales score: ");
             try {
-                sales = Double.parseDouble(sc.nextLine().trim());
+                sales = Integer.parseInt(sc.nextLine().trim());
                 if (sales < 0 || sales > 10) throw new Exception("Score must be 0-10");
                 break;
             } catch (NumberFormatException e) {
-                System.out.println("  Error: Please enter a valid number");
+                System.out.println("  Error: Please enter a valid integer");
             } catch (Exception e) {
                 System.out.println("  Error: " + e.getMessage());
             }

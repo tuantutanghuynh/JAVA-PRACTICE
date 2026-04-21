@@ -34,8 +34,9 @@ public class StudentManager<T extends Student> {
     //tim top student
     void FindTopStudent() {
         list.stream()
-                .max(Comparator.comparingDouble(Student::getScore))
-                .ifPresent(s -> System.out.println("Top student: " + s));
+                .sorted(Comparator.comparingDouble(Student::getScore).reversed())
+                .limit(1)
+                .forEach(System.out::println);
     }
 
     //sap xep theo diem

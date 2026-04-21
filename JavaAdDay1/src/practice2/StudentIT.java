@@ -12,11 +12,11 @@ import java.util.Scanner;
  */
 public class StudentIT extends Student {
 
-    double java, html, css;
+    int java, html, css;
 
     @Override
     public double getScore() {
-        return (java + html + css) / 3;
+        return (java + html + css) / 3.0;
     }
 
     @Override
@@ -27,11 +27,11 @@ public class StudentIT extends Student {
         while (true) {
             System.out.print("  Java score: ");
             try {
-                java = Double.parseDouble(sc.nextLine().trim());
+                java = Integer.parseInt(sc.nextLine().trim());
                 if (java < 0 || java > 10) throw new Exception("Score must be 0-10");
                 break;
             } catch (NumberFormatException e) {
-                System.out.println("  Error: Please enter a valid number");
+                System.out.println("  Error: Please enter a valid integer");
             } catch (Exception e) {
                 System.out.println("  Error: " + e.getMessage());
             }
@@ -39,11 +39,11 @@ public class StudentIT extends Student {
         while (true) {
             System.out.print("  HTML score: ");
             try {
-                html = Double.parseDouble(sc.nextLine().trim());
+                html = Integer.parseInt(sc.nextLine().trim());
                 if (html < 0 || html > 10) throw new Exception("Score must be 0-10");
                 break;
             } catch (NumberFormatException e) {
-                System.out.println("  Error: Please enter a valid number");
+                System.out.println("  Error: Please enter a valid integer");
             } catch (Exception e) {
                 System.out.println("  Error: " + e.getMessage());
             }
@@ -51,11 +51,11 @@ public class StudentIT extends Student {
         while (true) {
             System.out.print("  CSS score: ");
             try {
-                css = Double.parseDouble(sc.nextLine().trim());
+                css = Integer.parseInt(sc.nextLine().trim());
                 if (css < 0 || css > 10) throw new Exception("Score must be 0-10");
                 break;
             } catch (NumberFormatException e) {
-                System.out.println("  Error: Please enter a valid number");
+                System.out.println("  Error: Please enter a valid integer");
             } catch (Exception e) {
                 System.out.println("  Error: " + e.getMessage());
             }

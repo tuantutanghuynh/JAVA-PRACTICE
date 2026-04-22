@@ -34,6 +34,7 @@ Java Practice/
 ├── BookLibrary/            ← Ex 08: Library Management
 ├── HospitalSystem/         ← Ex 09: Hospital Management
 ├── HotelSystem/            ← Ex 10: Hotel Booking
+├── Supermarket/            ← Ex 13: Supermarket Management
 └── ...
 ```
 

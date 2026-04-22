@@ -4,15 +4,31 @@
  */
 package javaadday2;
 
-import java.io.FileInputStream;
 import java.io.ObjectOutputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
 
-/**
- *
- * @author tangh
- */
 public class DemoObjectStream {
-    public static void main(String[] args)  throws IOException{
-        ObjectOutputStream oos = new ObjectOutPutStream(new FileOutputStream("Student.txt"));
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
+
+        // ghi file (serialize)
+        ObjectOutputStream oos = new ObjectOutputStream(
+                new FileOutputStream("Student.ser")
+        );
+
+        oos.writeObject(new Student("van A", 100));
+        oos.close();
+
+        // đọc file (deserialize)
+        ObjectInputStream ois = new ObjectInputStream(
+                new FileInputStream("Student.ser")
+        );
+
+        Student s = (Student) ois.readObject();
+        System.out.println(s);
+
+        ois.close();
     }
 }

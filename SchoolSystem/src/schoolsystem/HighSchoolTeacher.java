@@ -34,16 +34,20 @@ public class HighSchoolTeacher extends Teacher {
     String GetLevel() {
         return "Highschool (" + degree + ")";
     }
-    
+
     @Override
     public double CalcBonus(){
         return salary * 0.20;
     }
-    
+
     @Override
-   public void PrintInfo(){
+    public void PrintInfo(){
         System.out.println("HIGH SCHOOL TEACHER: ");
         super.PrintInfo();
-   }
+    }
 
+    @Override
+    public String toString() {
+        return "H," + id + "," + name + "," + subject + "," + salary + "," + degree;
+    }
 }

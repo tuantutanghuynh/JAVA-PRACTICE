@@ -89,3 +89,4 @@ public class StudentManager<T extends Student> {
                         .reduce(0.0, (a,b) -> a + b) / list.size();
         
     }
+}

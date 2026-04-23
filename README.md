@@ -76,11 +76,11 @@ Progress is tracked per exercise. Each entry shows: exercise title, algorithm le
 
 | # | Exercise | Concepts | Status |
 |---|---|---|---|
-| 11 | Restaurant Management | Bubble Sort, 2nd max, try-catch crash prevention | ✅ |
-| 12 | School Management System | Selection Sort, multi-catch, `IllegalArgumentException` | ✅ |
-| 13 | Supermarket Management | Insertion Sort, `InputMismatchException`, scanner buffer | ✅ |
-| 14 | Football Team Management | Bubble Sort (descending), `InputMismatchException` vs `NumberFormatException` | ✅ |
-| 15 | Gym Management | Selection Sort (ascending), `ArithmeticException`, Fail Fast | ✅ |
+| 11 | Restaurant Management | Bubble Sort, 2nd max, try-catch crash prevention | ⬜ |
+| 12 | School Management System | Selection Sort, multi-catch, `IllegalArgumentException` | 🔨 |
+| 13 | Supermarket Management | Insertion Sort, `InputMismatchException`, scanner buffer | 🔨 |
+| 14 | Football Team Management | Bubble Sort (descending), `InputMismatchException` vs `NumberFormatException` | ⬜ |
+| 15 | Gym Management | Selection Sort (ascending), `ArithmeticException`, Fail Fast | ⬜ |
 
 ---
 
@@ -88,9 +88,9 @@ Progress is tracked per exercise. Each entry shows: exercise title, algorithm le
 
 | # | Exercise | Concepts | Status |
 |---|---|---|---|
-| 16 | Airline Management | while+try-catch input loop, `RuntimeException`, switch expression intro | ✅ |
-| 17 | Car Showroom Management | Linear search multi-result, `IllegalArgumentException`, switch expression | ✅ |
-| 18 | Cinema Management | Subarray filter, null return vs throw, switch expression (multi-label) | ✅ |
+| 16 | Airline Management | while+try-catch input loop, `RuntimeException`, switch expression intro | ⬜ |
+| 17 | Car Showroom Management | Linear search multi-result, `IllegalArgumentException`, switch expression | ⬜ |
+| 18 | Cinema Management | Subarray filter, null return vs throw, switch expression (multi-label) | ⬜ |
 | 19 | Farm Management | Multi-field validation loop, `FilterBySpecies`, switch expression + `yield` | ⬜ |
 | 20 | IT Project Management | `finally` block, reverse order, switch expression in `@Override` | ⬜ |
 
@@ -188,4 +188,4 @@ Progress is tracked per exercise. Each entry shows: exercise title, algorithm le
 
 ---
 
-**Progress: 13 / 70 completed**
+**Progress: 7 / 70 completed &nbsp;|&nbsp; 🔨 2 in progress (Bài 12, 13)**

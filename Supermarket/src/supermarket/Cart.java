@@ -1,5 +1,9 @@
 package supermarket;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 /**
@@ -9,8 +13,8 @@ import java.util.ArrayList;
  */
 public class Cart {
     
-    // ArrayList thay mảng cố định — không cần quản lý biến count
     ArrayList<Item> items = new ArrayList<>();
+    String filename = "item.ser";
     
     // -------- Add Item --------
     public void AddItem(Item item) {
@@ -96,6 +100,31 @@ public class Cart {
         System.out.printf("Max profit: %.0f%n", maxProfit);
     }
     
+    // -------- Write to file (Serialization) --------
+    public void WriteToFile() {
+        try {
+            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filename));
+            oos.writeObject(items);
+            oos.close();
+            System.out.println("Saved " + items.size() + " items to " + filename);
+        } catch (Exception e) {
+            System.out.println("Error write to file: " + e.getMessage());
+        }
+    }
+
+    // -------- Read from file (Serialization) --------
+    @SuppressWarnings("unchecked")
+    public void ReadFromFile() {
+        try {
+            ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filename));
+            items = (ArrayList<Item>) ois.readObject();
+            ois.close();
+            System.out.println("Loaded " + items.size() + " items from " + filename);
+        } catch (Exception e) {
+            System.out.println("Error read file: " + e.getMessage());
+        }
+    }
+
     // -------- LeetCode #1480 — Running Sum --------
     public void RunningSum() {
         if (items.isEmpty()) {

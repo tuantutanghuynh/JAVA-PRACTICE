@@ -40,15 +40,20 @@ public class PrimaryTeacher extends Teacher {
     String GetLevel() {
         return "Primary (Gr." + classLevel + ")";
     }
-    
+
     @Override
     public double CalcBonus(){
         return salary * 0.15;
     }
-    
+
     @Override
     public void PrintInfo(){
         System.out.println("PRIMARY TEACHER: ");
-        super.Input();
+        super.PrintInfo();
+    }
+
+    @Override
+    public String toString() {
+        return "P," + id + "," + name + "," + subject + "," + salary + "," + classLevel;
     }
 }

@@ -61,6 +61,12 @@ public class Supermarket {
                 case "8":
                     cart.RunningSum();
                     break;
+                case "9":
+                    cart.WriteToFile();
+                    break;
+                case "10":
+                    cart.ReadFromFile();
+                    break;
                 case "0":
                     System.out.println("Goodbye!");
                     sc.close();
@@ -83,6 +89,8 @@ public class Supermarket {
         System.out.println(" 6. Check if sorted");
         System.out.println(" 7. Best time to buy (stock prices)");
         System.out.println(" 8. Running revenue sum");
+        System.out.println(" 9. Write to file (serialization)");
+        System.out.println("10. Read from file (serialization)");
         System.out.println(" 0. Exit");
         System.out.println("------------------------------");
     }

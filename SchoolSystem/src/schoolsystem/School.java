@@ -4,6 +4,8 @@
  */
 package schoolsystem;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 
 /**
@@ -13,6 +15,7 @@ import java.util.ArrayList;
 public class School {
 
     ArrayList<Teacher> teachers = new ArrayList<>();
+    String filename = "teacher.txt";
 
     public void Add(Teacher t) {
         t.Input();
@@ -71,6 +74,48 @@ public class School {
             }
         }
         System.out.printf("Total salary: %.0f VND%n", total);
+    }
+
+    public void WriteToFile() {
+        try {
+            FileOutputStream fos = new FileOutputStream(filename);
+            for (Teacher t : teachers) {
+                fos.write((t.toString() + "\n").getBytes());
+            }
+            fos.close();
+            System.out.println("Saved " + teachers.size() + " teachers to " + filename);
+        } catch (Exception e) {
+            System.out.println("Error write to file: " + e.getMessage());
+        }
+    }
+
+    public void ReadFromFile() {
+        try {
+            FileInputStream fis = new FileInputStream(filename);
+            String content = new String(fis.readAllBytes());
+            fis.close();
+            teachers.clear();
+            for (String line : content.split("\n")) {
+                if (line.trim().isEmpty()) continue;
+                String[] p = line.trim().split(",");
+                if (p[0].equals("P")) {
+                    PrimaryTeacher t = new PrimaryTeacher();
+                    t.id = p[1]; t.name = p[2]; t.subject = p[3];
+                    t.salary = Float.parseFloat(p[4]);
+                    t.classLevel = Integer.parseInt(p[5]);
+                    teachers.add(t);
+                } else if (p[0].equals("H")) {
+                    HighSchoolTeacher t = new HighSchoolTeacher();
+                    t.id = p[1]; t.name = p[2]; t.subject = p[3];
+                    t.salary = Float.parseFloat(p[4]);
+                    t.degree = p[5];
+                    teachers.add(t);
+                }
+            }
+            System.out.println("Loaded " + teachers.size() + " teachers from " + filename);
+        } catch (Exception e) {
+            System.out.println("Error read file: " + e.getMessage());
+        }
     }
 
     public void SecondHighestSalary() {

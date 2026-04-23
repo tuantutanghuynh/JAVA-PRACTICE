@@ -1,16 +1,13 @@
 package supermarket;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 /**
  *
  * @author tangh
  */
-public abstract class Item implements IStoreItem {
+public abstract class Item implements IStoreItem, Serializable {
 
     String barcode;
     String name;

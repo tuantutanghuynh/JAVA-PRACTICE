@@ -4,6 +4,9 @@
 
 # Ignore PDF files
 *.pdf
+
+# Ignore Java compiled artifacts
+*.class
 /PracticeDay5/nbproject/private/
 /PracticeDay5/build/
 /BankAccountSystem/nbproject/private/

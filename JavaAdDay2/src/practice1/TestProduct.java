@@ -42,7 +42,7 @@ public class TestProduct {
 					break;
 				case "4":
 					pa.ReadFromFile();
-                                                                                                System.out.println("Read file successfully");
+                    System.out.println("Read file successfully");
 					break;
 				case "5":
 					System.out.println("Exit program");

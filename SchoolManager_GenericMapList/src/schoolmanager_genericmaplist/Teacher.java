@@ -10,16 +10,19 @@ import java.util.Scanner;
  *
  * @author tangh
  */
-public class Teacher implements ITeachable {
+public abstract class Teacher implements ITeachable {
 
     String id;
     String name;
     String subject;
     double salary;
 
+    // static final: dùng chung 1 instance cho toàn bộ subclass, tránh tạo nhiều Scanner(System.in)
+    // Không dùng try-with-resources vì đóng Scanner sẽ đóng luôn System.in → các lần nhập sau bị crash
+    static final Scanner sc = new Scanner(System.in);
+
     @Override
     public void Input() {
-        Scanner sc = new Scanner(System.in);
         while (true) {
             System.out.print("Input ID :");
             try {
@@ -31,7 +34,7 @@ public class Teacher implements ITeachable {
                     throw new Exception("ID must not contain space");
                 }
                 if (!id.matches("[A-Za-z0-9]{3,5}")) {
-                    throw new Exception("ID must be 3-10 alphanumeric characters");
+                    throw new Exception("ID must be 3-5 alphanumeric characters");
                 }
                 break;
             } catch (Exception e) {
@@ -113,13 +116,12 @@ public class Teacher implements ITeachable {
         }
     }
 
-    @Override
-    public void PrintInfo() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 
     @Override
-    public double CalcBonus() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    public abstract void PrintInfo();
+
+    @Override
+    public abstract double CalcBonus();
+
+    public abstract String GetLevel();
 }

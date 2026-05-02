@@ -16,7 +16,7 @@ import java.util.Map;
  *
  * @author tangh
  */
-public class SchooManager<T extends Teacher> {
+public class SchoolManager<T extends Teacher> {
     private final Map<String,  T> map = new HashMap<>();
     private final List<T> list = new ArrayList<>();
     private final Object lock = new Object();

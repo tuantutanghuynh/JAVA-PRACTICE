@@ -10,6 +10,6 @@ package schoolmanager_dbconnection;
  */
 public interface ITeachable {
     void Input();
-    void PintInfo();
+    void PrintInfo();
     double CalcBonus();
 }

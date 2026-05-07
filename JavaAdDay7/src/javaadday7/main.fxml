@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="480.0" prefWidth="640.0"
+            style="-fx-background-color: #2C1A0E;"
+            xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/21"
+            fx:controller="javaadday7.MainController">
+
+   <children>
+
+      <!-- Card trung tâm -->
+      <AnchorPane layoutX="120.0" layoutY="60.0"
+                  prefWidth="400.0" prefHeight="360.0"
+                  style="-fx-background-color: #F5E6CF;
+                         -fx-border-color: #7B4F2E;
+                         -fx-border-width: 3;
+                         -fx-border-radius: 4;
+                         -fx-background-radius: 4;
+                         -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.6), 18, 0, 0, 6);">
+         <children>
+
+            <!-- Viền trang trí bên trong -->
+            <AnchorPane layoutX="10.0" layoutY="10.0"
+                        prefWidth="380.0" prefHeight="340.0"
+                        style="-fx-border-color: #A0704A;
+                               -fx-border-width: 1;
+                               -fx-border-radius: 2;
+                               -fx-background-color: transparent;" />
+
+            <!-- Title: Java icon + LOGIN -->
+            <HBox layoutX="0.0" layoutY="20.0" prefWidth="400.0"
+                  alignment="CENTER" spacing="10.0">
+               <Label text="J"
+                      style="-fx-background-color: #E76F00;
+                             -fx-text-fill: white;
+                             -fx-font-family: 'Georgia';
+                             -fx-font-size: 26px;
+                             -fx-font-weight: bold;
+                             -fx-background-radius: 50%;
+                             -fx-padding: 4 13 4 13;" />
+               <Label text="LOGIN"
+                      style="-fx-text-fill: #3E1F00;
+                             -fx-font-family: 'Georgia';
+                             -fx-font-size: 34px;
+                             -fx-font-weight: bold;" />
+            </HBox>
+
+            <!-- Đường kẻ trang trí -->
+            <Label layoutX="80.0" layoutY="78.0" prefWidth="240.0"
+                   text="─── ✦ ───"
+                   alignment="CENTER"
+                   textAlignment="CENTER"
+                   style="-fx-text-fill: #A0704A;
+                          -fx-font-size: 13px;" />
+
+            <!-- Thông báo -->
+            <Label fx:id="lblMessage" layoutX="0.0" layoutY="102.0" prefWidth="400.0"
+                   text=""
+                   alignment="CENTER"
+                   textAlignment="CENTER"
+                   style="-fx-text-fill: #8B1A1A;
+                          -fx-font-family: 'Georgia';
+                          -fx-font-size: 12px;
+                          -fx-font-style: italic;" />
+
+            <!-- Label User Name -->
+            <Label layoutX="60.0" layoutY="133.0"
+                   text="User Name"
+                   style="-fx-text-fill: #5C3317;
+                          -fx-font-family: 'Georgia';
+                          -fx-font-size: 13px;
+                          -fx-font-weight: bold;" />
+
+            <!-- TextField Username -->
+            <TextField fx:id="txtUsername"
+                       layoutX="60.0" layoutY="155.0"
+                       prefWidth="280.0" prefHeight="34.0"
+                       promptText="Enter username..."
+                       style="-fx-background-color: #FFF8F0;
+                              -fx-border-color: #A0704A;
+                              -fx-border-width: 1.5;
+                              -fx-border-radius: 2;
+                              -fx-background-radius: 2;
+                              -fx-font-family: 'Georgia';
+                              -fx-font-size: 13px;
+                              -fx-text-fill: #2C1A0E;
+                              -fx-prompt-text-fill: #C4A882;" />
+
+            <!-- Label Password -->
+            <Label layoutX="60.0" layoutY="205.0"
+                   text="Password"
+                   style="-fx-text-fill: #5C3317;
+                          -fx-font-family: 'Georgia';
+                          -fx-font-size: 13px;
+                          -fx-font-weight: bold;" />
+
+            <!-- PasswordField -->
+            <PasswordField fx:id="txtPassword"
+                           layoutX="60.0" layoutY="227.0"
+                           prefWidth="280.0" prefHeight="34.0"
+                           promptText="Enter password..."
+                           style="-fx-background-color: #FFF8F0;
+                                  -fx-border-color: #A0704A;
+                                  -fx-border-width: 1.5;
+                                  -fx-border-radius: 2;
+                                  -fx-background-radius: 2;
+                                  -fx-font-family: 'Georgia';
+                                  -fx-font-size: 13px;
+                                  -fx-text-fill: #2C1A0E;
+                                  -fx-prompt-text-fill: #C4A882;" />
+
+            <!-- Nút Login -->
+            <Button layoutX="140.0" layoutY="287.0"
+                    prefWidth="120.0" prefHeight="38.0"
+                    text="Login"
+                    mnemonicParsing="false"
+                    onAction="#handleLogin"
+                    style="-fx-background-color: #6B3A1F;
+                           -fx-text-fill: #F5E6CF;
+                           -fx-font-family: 'Georgia';
+                           -fx-font-size: 15px;
+                           -fx-font-weight: bold;
+                           -fx-border-color: #A0704A;
+                           -fx-border-width: 1.5;
+                           -fx-border-radius: 3;
+                           -fx-background-radius: 3;
+                           -fx-cursor: hand;" />
+
+         </children>
+      </AnchorPane>
+
+      <!-- Footer trang trí -->
+      <Label layoutX="0.0" layoutY="450.0" prefWidth="640.0"
+             text="~ Est. 2025 · Vintage Coffee ~"
+             textAlignment="CENTER"
+             alignment="CENTER"
+             style="-fx-text-fill: #7B4F2E;
+                    -fx-font-family: 'Georgia';
+                    -fx-font-size: 11px;
+                    -fx-font-style: italic;" />
+
+   </children>
+</AnchorPane>
